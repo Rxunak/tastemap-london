@@ -5,10 +5,16 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import type { PlacesType } from "@/types/place";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-export function SegmentedControl() {
+type PlaceTabsProps = {
+  placesInfo: PlacesType[];
+};
+
+export function SegmentedControl({ placesInfo }: PlaceTabsProps) {
+  console.log(placesInfo);
   return (
     <Tabs defaultValue="been" className="w-100">
       <TabsList className=" bg-background w-full">
