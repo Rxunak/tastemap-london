@@ -14,5 +14,5 @@ export type PlacesType = {
   tags: string[];
   note: string;
   addedAt: string;
-  rank: number | null;
+  rank?: number | null | undefined;
 };
