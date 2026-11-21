@@ -9,7 +9,7 @@ import type { PlacesType } from "@/types/place";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-import { priceSymbolFormat } from "@/lib/utils";
+import { PlacesCards } from "@/components/shared/places-cards";
 
 type PlaceTabsProps = {
   placesInfo: PlacesType[];
@@ -43,33 +43,16 @@ export function SegmentedControl({ placesInfo }: PlaceTabsProps) {
       <TabsContent value="been">
         <div className="flex gap-2 flex-col">
           {beenStatus.map((item) => (
-            <div
-              key={item.id}
-              className="flex justify-between bg-white rounded-xl p-4 items-center"
-            >
-              <div className="flex gap-4 items-center">
-                <div
-                  className={`text-xl font-bold ${item.rank !== null && item.rank !== undefined && item.rank <= 3 ? "text-primary" : "text-gray-400"} `}
-                >
-                  {item.rank}
-                </div>
-                <div>
-                  <h1 className="font-bold text-sm">{item.name}</h1>
-                  <div className="flex gap-1 text-xs text-gray-500">
-                    {item.cuisine}
-                    <span>&#183;</span>
-
-                    {priceSymbolFormat(item.price)}
-                    <span>&#183;</span>
-                    {item.area}
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-background w-10 rounded-2xl text-center text-xs font-bold p-0.5">
-                10
-              </div>
-            </div>
+            <PlacesCards
+              placesCardsProps={{
+                itemId: item.id,
+                itemRank: item.rank,
+                itemName: item.name,
+                itemCuisine: item.cuisine,
+                itemPrice: item.price,
+                itemArea: item.area,
+              }}
+            />
           ))}
         </div>
       </TabsContent>
