@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-label="TasteMap">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@600&amp;display=swap');
+    </style>
+  </defs>
+  <g fill="#3B7AA1">
+    <!-- big bubble -->
+    <circle cx="274" cy="172" r="52"/>
+    <!-- top small bubble -->
+    <circle cx="292" cy="92" r="22"/>
+    <!-- right medium bubble -->
+    <circle cx="348" cy="118" r="32"/>
+    <!-- bottom-right tiny bubble -->
+    <circle cx="350" cy="173" r="17"/>
+  </g>
+  <!-- shine highlights -->
+  <g fill="none" stroke="#FFFFFF" stroke-linecap="round" opacity="0.9">
+    <path d="M241 150 A38 38 0 0 1 262 132" stroke-width="7"/>
+    <path d="M280 85 A13 13 0 0 1 290 79" stroke-width="4"/>
+    <path d="M330 107 A22 22 0 0 1 343 98" stroke-width="5"/>
+    <path d="M340 166 A10 10 0 0 1 347 162" stroke-width="3.5"/>
+  </g>
+  <text x="300" y="300" text-anchor="middle"
+        font-family="Fredoka, Nunito, 'Arial Rounded MT Bold', 'Varela Round', sans-serif"
+        font-weight="600" font-size="78" letter-spacing="1" fill="#3B7AA1">TasteMap</text>
+</svg>
