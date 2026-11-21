@@ -1,10 +1,3 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import type { PlacesType } from "@/types/place";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -32,6 +25,7 @@ export function SegmentedControl({ placesInfo }: PlaceTabsProps) {
           {wantStatus.length}
         </TabsTrigger>
       </TabsList>
+
       <TabsContent value="been">
         <h1 className="text-gray-500 text-xs">
           Ranked by your head-to-head picks. Tap a place to see it on the map.
@@ -56,19 +50,22 @@ export function SegmentedControl({ placesInfo }: PlaceTabsProps) {
           ))}
         </div>
       </TabsContent>
+
       <TabsContent value="want">
-        <Card>
-          <CardHeader>
-            <CardTitle>Analytics</CardTitle>
-            <CardDescription>
-              Track performance and user engagement metrics. Monitor trends and
-              identify growth opportunities.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="text-sm text-muted-foreground">
-            Page views are up 25% compared to last month.
-          </CardContent>
-        </Card>
+        <div className="flex gap-2 flex-col">
+          {wantStatus.map((item) => (
+            <PlacesCards
+              placesCardsProps={{
+                itemId: item.id,
+                itemDate: item.addedAt,
+                itemName: item.name,
+                itemCuisine: item.cuisine,
+                itemPrice: item.price,
+                itemArea: item.area,
+              }}
+            />
+          ))}
+        </div>
       </TabsContent>
     </Tabs>
   );
